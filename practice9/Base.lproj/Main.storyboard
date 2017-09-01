@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="practice9" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIE-sp-6Mh" customClass="CameraView" customModule="practice9" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.90266926700000005" green="0.90266926700000005" blue="0.90266926700000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="x23-UY-Rui">
+                                <rect key="frame" x="16" y="589" width="343" height="70"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NQb-cJ-jkM">
+                                        <rect key="frame" x="-2" y="0.0" width="347" height="31"/>
+                                        <connections>
+                                            <action selector="zoomCamera:" destination="BYZ-38-t0r" eventType="valueChanged" id="orh-y4-jkD"/>
+                                        </connections>
+                                    </slider>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4oI-mB-bXg">
+                                        <rect key="frame" x="0.0" y="40" width="343" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmb-27-uHQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="107.5" height="30"/>
+                                                <state key="normal" title="Metadata"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbw-We-aRf">
+                                                <rect key="frame" x="117.5" y="0.0" width="108" height="30"/>
+                                                <state key="normal" title="Presets"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqN-wV-CIf">
+                                                <rect key="frame" x="235.5" y="0.0" width="107.5" height="30"/>
+                                                <state key="normal" title="Camera"/>
+                                                <connections>
+                                                    <action selector="changeCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0aT-o7-pu0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iIE-sp-6Mh" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="0rZ-WN-KQt"/>
+                            <constraint firstItem="x23-UY-Rui" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="40f-vL-OMB"/>
+                            <constraint firstItem="iIE-sp-6Mh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5E6-Nm-rFv"/>
+                            <constraint firstItem="iIE-sp-6Mh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="7e0-D4-3Nf"/>
+                            <constraint firstItem="iIE-sp-6Mh" firstAttribute="centerX" secondItem="x23-UY-Rui" secondAttribute="centerX" id="bKp-PX-zi7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="x23-UY-Rui" secondAttribute="trailing" id="pXH-5I-Mxu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="x23-UY-Rui" secondAttribute="bottom" constant="8" symbolic="YES" id="zso-SF-Gvl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="xqN-wV-CIf" id="hWd-nS-pQB"/>
+                        <outlet property="cameraView" destination="iIE-sp-6Mh" id="qca-JS-dCH"/>
+                        <outlet property="metadataButton" destination="Jmb-27-uHQ" id="24u-dO-EUO"/>
+                        <outlet property="presetsButton" destination="mbw-We-aRf" id="9JS-NZ-yDo"/>
+                        <outlet property="zommSlider" destination="NQb-cJ-jkM" id="sie-cZ-VT4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-365.60000000000002" y="107.49625187406298"/>
+        </scene>
+    </scenes>
+</document>
