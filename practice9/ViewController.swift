@@ -45,7 +45,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         }
         
         sessionQueue.async { [unowned self] in
-            self.configureSession()
+            DispatchQueue.main.async {
+                self.configureSession()
+            }
         }
     }
     
